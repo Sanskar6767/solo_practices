@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const section = document.querySelector('section');
+
+        let para1 = document.createElement('p');
+        let para2 = document.createElement('p');
+        let motherInfo = 'The mother cats are called ';
+        let kittenInfo;
+        
+        // fetch(requestURL)
+        // .then(response => response.text())
+        // .then(text => displayCatInfo(text))
+        // const request  = new Request(requestURL);
+
+        // const response = await fetch(request);
+        // const catinfotext = await response.text();
+        // const catinfo = JSON.parse(catinfotext);
+        // displayCatInfo(catinfo);
+
+        async function fetchAndDisplayCatInfo() {
+            const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
+            try {
+                const response = await fetch(requestURL);
+                const catInfo = await response.json(); // Directly parse JSON
+
+                displayCatInfo(catInfo);
+            } catch (error) {
+                console.error('Fetch error:', error);
+            }
+        }
+
+
+        function displayCatInfo(catString) {
+        let total = 0;
+        let male = 0;
+
+        // Add your code here
+        let female = 0;
+
+        for (const mother of catString) {
+            motherInfo += `${mother.name}, ` ;
+            for (const kitten in mother.kittens) {
+                if (kitten.gender === 'm') {
+                    male++;
+                }
+                else {
+                    female++;
+                }
+            }
+        }
+
+        total = male + female;
+        kittenInfo = `There are ${male} male and ${female} kittens making the total of ${total} kittens`;
+
+        // Don't edit the code below here!
+
+        para1.textContent = motherInfo;
+        para2.textContent = kittenInfo;
+        }
+
+        section.appendChild(para1);
+        section.appendChild(para2);
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 80px;
+    background-color: aliceblue;
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    color: black;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+li{
+    padding: 8px 10px ;
+    background-color: rgb(229, 229, 229);
+    border-radius: 4px;
+
+}
+li:hover{
+    background-color: rgb(160, 173, 173);
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.container{
+    padding: 60px 160px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    min-height: 60vh;
+}
+
+.second{
+    display: flex;
+    overflow: hidden;
+    width: 600px;
+    text-align: center;
+}
+
+.second img{
+    width: 600px;
+    display: none;
+}
+
+.second >img.active{
+    display: block;
+}
+
+.nav-dots{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-dot{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(237, 237, 237);
+    cursor: pointer;
+}
+
+.nav-dots .present {
+    background-color: rgb(168, 168, 168);
+}
+
+.button-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.button-wrapper button{
+    background-color: rgb(179, 245, 251);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+
+
